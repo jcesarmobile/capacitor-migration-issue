@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { EchoPlugin } from '../plugin/EchoPlugin';
+import Echo  from '../plugin/EchoPlugin';
 
 @Component({
   selector: 'app-home',
@@ -8,12 +8,12 @@ import { EchoPlugin } from '../plugin/EchoPlugin';
 })
 export class HomePage {
 
-  constructor(public echo:EchoPlugin) {}
+  constructor() {}
 
   async ionViewDidEnter(){
-    let res = await this.echo.echo({value: 'Hello World'});
+    let res = await Echo.echo({value: 'Hello World'});
 
-    console.log(res);
+    console.log('res', res.value);
     
   }
 
